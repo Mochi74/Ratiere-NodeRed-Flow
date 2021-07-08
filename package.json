@@ -1,0 +1,12 @@
+{
+    "name": "RatiereEdgeNodeRed",
+    "description": "Node Red Flow for edge ratiere",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}
