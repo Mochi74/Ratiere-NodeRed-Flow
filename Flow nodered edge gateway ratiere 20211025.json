@@ -1,0 +1,849 @@
+[
+    {
+        "id": "aba512c15a8fecd6",
+        "type": "tab",
+        "label": "Azure IoT Edge",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "0b956ddbde027a1a",
+        "type": "tab",
+        "label": "Http serveur",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "80374e54c58e200a",
+        "type": "subflow",
+        "name": "Subflow 1",
+        "info": "",
+        "category": "",
+        "in": [],
+        "out": [
+            {
+                "x": 1460,
+                "y": 400,
+                "wires": [
+                    {
+                        "id": "8786a8aa24c6cc01",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "IPADDRESS",
+                "type": "str",
+                "value": "192.168.1.141",
+                "ui": {
+                    "type": "input",
+                    "opts": {
+                        "types": [
+                            "str"
+                        ]
+                    }
+                }
+            },
+            {
+                "name": "PORT",
+                "type": "str",
+                "value": "8880"
+            },
+            {
+                "name": "TOPIC",
+                "type": "str",
+                "value": "Ratiere1"
+            }
+        ],
+        "color": "#DDAA99"
+    },
+    {
+        "id": "e543a472.1c5818",
+        "type": "ui_tab",
+        "name": "IoT Dashboard",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "8b8bd259.7af5b",
+        "type": "ui_group",
+        "name": "Charts",
+        "tab": "e543a472.1c5818",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "d5ae2d76.f72a",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "eb53bb6b.018308",
+        "type": "ui_group",
+        "name": "Gauges",
+        "tab": "e543a472.1c5818",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "ad0fb0dd.c701d",
+        "type": "edgeclient"
+    },
+    {
+        "id": "5889b26a507ee092",
+        "type": "moduletwin",
+        "z": "aba512c15a8fecd6",
+        "client": "ad0fb0dd.c701d",
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "6fcf625c351538ce",
+                "59577671f5ddb1d8"
+            ]
+        ]
+    },
+    {
+        "id": "6fcf625c351538ce",
+        "type": "debug",
+        "z": "aba512c15a8fecd6",
+        "name": "Twin msg",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 400,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "98ea2b9054a58bbf",
+        "type": "modulemethod",
+        "z": "aba512c15a8fecd6",
+        "client": "ad0fb0dd.c701d",
+        "method": "setValue",
+        "x": 170,
+        "y": 640,
+        "wires": [
+            [
+                "2902e08cd3cd44dd",
+                "b418adc7f964d9e8",
+                "67d8a5abde16137b"
+            ]
+        ]
+    },
+    {
+        "id": "2902e08cd3cd44dd",
+        "type": "debug",
+        "z": "aba512c15a8fecd6",
+        "name": "Method msg",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "b418adc7f964d9e8",
+        "type": "function",
+        "z": "aba512c15a8fecd6",
+        "name": "Response msg",
+        "func": "var response = { payload:\n\"{\\\"methodpayload\\\": \\\"\" + JSON.stringify(msg.payload) + \"\\\"}\" }\nresponse.payload.timestamp = Date.now()\nresponse.status = 100\nreturn response;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 180,
+        "y": 720,
+        "wires": [
+            [
+                "98ea2b9054a58bbf"
+            ]
+        ]
+    },
+    {
+        "id": "ebd81235a6892c33",
+        "type": "comment",
+        "z": "aba512c15a8fecd6",
+        "name": "Module twin",
+        "info": "",
+        "x": 90,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "978f19fe17140737",
+        "type": "comment",
+        "z": "aba512c15a8fecd6",
+        "name": "Process Direct Method",
+        "info": "",
+        "x": 120,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "80d5409bcaae675a",
+        "type": "comment",
+        "z": "aba512c15a8fecd6",
+        "name": "Process message and send to output",
+        "info": "",
+        "x": 170,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "67d8a5abde16137b",
+        "type": "link out",
+        "z": "aba512c15a8fecd6",
+        "name": "methodToDashboard",
+        "links": [],
+        "x": 435,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "60267155c067583c",
+        "type": "tcp in",
+        "z": "80374e54c58e200a",
+        "name": "Ratiere",
+        "server": "client",
+        "host": "${IPADDRESS}",
+        "port": "${PORT}",
+        "datamode": "stream",
+        "datatype": "utf8",
+        "newline": "\\n",
+        "topic": "${TOPIC}",
+        "base64": false,
+        "x": 190,
+        "y": 280,
+        "wires": [
+            [
+                "b937d825bd9f4dda",
+                "2cd7bd88b8e60a83"
+            ]
+        ],
+        "icon": "node-red/bridge.svg"
+    },
+    {
+        "id": "b937d825bd9f4dda",
+        "type": "switch",
+        "z": "80374e54c58e200a",
+        "name": "Switch ",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "Version",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "SpeedTable",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "TempTable",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "Lame",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 470,
+        "y": 280,
+        "wires": [
+            [
+                "c5beadc199dedd62",
+                "f7667df95869452c"
+            ],
+            [
+                "fb10be9ab9d67548"
+            ],
+            [
+                "23a4befc985da761"
+            ],
+            [
+                "d654e04ff165105b"
+            ]
+        ]
+    },
+    {
+        "id": "c5beadc199dedd62",
+        "type": "json",
+        "z": "80374e54c58e200a",
+        "name": "ToObject",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 620,
+        "y": 180,
+        "wires": [
+            [
+                "9fd3ab7281a7e0cd",
+                "25e58827b833200a"
+            ]
+        ]
+    },
+    {
+        "id": "f7667df95869452c",
+        "type": "function",
+        "z": "80374e54c58e200a",
+        "name": "TimeFilter",
+        "func": "var lastSend = context.get(\"lastSend\");\nvar period = global.get(\"periodVersion\");\nconst current = Date.now();\n\nif ((current - lastSend)/1000 >= period ) {\n    context.set(\"lastSend\",current);\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is deployed.\nvar lastSend = Date.now();\ncontext.set(\"lastSend\",lastSend);",
+        "finalize": "",
+        "x": 720,
+        "y": 280,
+        "wires": [
+            [
+                "93a21fc1d77552bf"
+            ]
+        ]
+    },
+    {
+        "id": "9fd3ab7281a7e0cd",
+        "type": "function",
+        "z": "80374e54c58e200a",
+        "name": "get idle",
+        "func": "var newMsg = {payload: msg.payload.idle,topic: msg.topic};\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 800,
+        "y": 200,
+        "wires": [
+            [
+                "472cce25b91ae4f8"
+            ]
+        ]
+    },
+    {
+        "id": "59577671f5ddb1d8",
+        "type": "function",
+        "z": "aba512c15a8fecd6",
+        "name": "set Flow Variable",
+        "func": "var obj = msg.payload;\n\nvar confTable = msg.payload.apparels;\nglobal.set(\"Apparels\", confTable);\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is deployed.\n// Code added here will be run once\n// whenever the node is started\nconst apparelArray =[\n       {\n        \"Id\" : \"192.168.1.133\",\n        \"def\" : {\n            \"ApparelID\":\"Ratiere3\",\n            \"PeriodeStatut\":60,\n            \"PeriodeTempTable\":120,\n            \"PeriodeSpeedTable\":120,\n            \"PeriodeLame\":300\n            }\n       },\n       {\n        \"Id\" : \"192.168.1.238\",\n        \"def\" : {\n            \"ApparelID\":\"Ratiere5\",\n            \"PeriodeStatut\":60,\n            \"PeriodeTempTable\":120,\n            \"PeriodeSpeedTable\":120,\n            \"PeriodeLame\":300\n            }\n       },\n       {\n        \"Id\" : \"192.168.0.141\",\n        \"def\" : {\n            \"ApparelID\":\"Ratiere5\",\n            \"PeriodeStatut\":60,\n            \"PeriodeTempTable\":120,\n            \"PeriodeSpeedTable\":120,\n            \"PeriodeLame\":300\n            }\n       },\n       {\n        \"Id\" : \"192.168.1.152\",\n        \"def\" : {\n            \"ApparelID\":\"Ratiere4\",\n            \"PeriodeStatut\":60,\n            \"PeriodeTempTable\":120,\n            \"PeriodeSpeedTable\":120,\n            \"PeriodeLame\":300\n            }\n       }\n    ]\n    \nglobal.set('Apparels',apparelArray);    \n\n\n\n",
+        "finalize": "",
+        "x": 430,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fb10be9ab9d67548",
+        "type": "function",
+        "z": "80374e54c58e200a",
+        "name": "TimeFilter",
+        "func": "var lastSend = context.get(\"lastSend\");\nvar period = global.get(\"periodSpeedTable\");\nconst current = Date.now();\n\n\nif ((current - lastSend)/1000 >= period || lastSend == null) {\n    context.set(\"lastSend\",current);\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 720,
+        "y": 320,
+        "wires": [
+            [
+                "93a21fc1d77552bf"
+            ]
+        ]
+    },
+    {
+        "id": "23a4befc985da761",
+        "type": "function",
+        "z": "80374e54c58e200a",
+        "name": "TimeFilter",
+        "func": "var lastSend = context.get(\"lastSend\");\nvar period = global.get(\"periodTempTable\");\nconst current = Date.now();\n\n\nif ((current - lastSend)/1000 >= period || lastSend == null) {\n    context.set(\"lastSend\",current);\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 720,
+        "y": 360,
+        "wires": [
+            [
+                "93a21fc1d77552bf"
+            ]
+        ]
+    },
+    {
+        "id": "d654e04ff165105b",
+        "type": "function",
+        "z": "80374e54c58e200a",
+        "name": "TimeFilter",
+        "func": "var lastSend = context.get(\"lastSend\");\nvar period = global.get(\"periodLame\");\nconst current = Date.now();\n\n\nif ((current - lastSend)/1000 >= period || lastSend == null) {\n    context.set(\"lastSend\",current);\n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 720,
+        "y": 400,
+        "wires": [
+            [
+                "93a21fc1d77552bf"
+            ]
+        ]
+    },
+    {
+        "id": "aa7e0fedd60a3f30",
+        "type": "function",
+        "z": "80374e54c58e200a",
+        "name": "Check Alert",
+        "func": "var previous = context.get(\"previous\");\nvar previousTime = context.get(\"previousTime\");\nvar threshold = flow.get(\"threshold\");\n\nconst current = msg.payload;\n\n\nif (previous  == null) {\n    context.set(\"previous\",current);\n    context.set(\"previousTime\",Date.now());\n}\nelse \n    if ((current - previous) >= threshold) {\n        newMsg = {\n            topic:msg.topic,\n            payload: \"Alert: rapid Temperature change \" + (current - previous)/(date.now()-previousTime) +\"°/ms\"\n        }    \n        return newMsg;\n    }\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1030,
+        "y": 80,
+        "wires": [
+            [
+                "93a21fc1d77552bf"
+            ]
+        ]
+    },
+    {
+        "id": "25e58827b833200a",
+        "type": "function",
+        "z": "80374e54c58e200a",
+        "name": "get Temperature",
+        "func": "var newMsg = {payload: msg.payload.Temperature,topic: msg.topic};\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 820,
+        "y": 140,
+        "wires": [
+            [
+                "24d87603a5f6d636",
+                "aa7e0fedd60a3f30"
+            ]
+        ]
+    },
+    {
+        "id": "24d87603a5f6d636",
+        "type": "ui_gauge",
+        "z": "80374e54c58e200a",
+        "name": "",
+        "group": "8b8bd259.7af5b",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1010,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "472cce25b91ae4f8",
+        "type": "ui_numeric",
+        "z": "80374e54c58e200a",
+        "name": "",
+        "label": "numeric",
+        "tooltip": "",
+        "group": "8b8bd259.7af5b",
+        "order": 1,
+        "width": "4",
+        "height": "2",
+        "wrap": false,
+        "passthru": true,
+        "topic": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10000000",
+        "step": 1,
+        "x": 1020,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7267958e9ef4cfa5",
+        "type": "function",
+        "z": "80374e54c58e200a",
+        "name": "Add Source",
+        "func": "msg.payload[\"From\"] = msg.topic\n    \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "x": 1250,
+        "y": 340,
+        "wires": [
+            [
+                "8786a8aa24c6cc01"
+            ]
+        ]
+    },
+    {
+        "id": "93a21fc1d77552bf",
+        "type": "json",
+        "z": "80374e54c58e200a",
+        "name": "convert",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 1240,
+        "y": 280,
+        "wires": [
+            [
+                "7267958e9ef4cfa5"
+            ]
+        ]
+    },
+    {
+        "id": "8786a8aa24c6cc01",
+        "type": "json",
+        "z": "80374e54c58e200a",
+        "name": "convert back",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 1250,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2cd7bd88b8e60a83",
+        "type": "debug",
+        "z": "80374e54c58e200a",
+        "name": "",
+        "active": true,
+        "tosidebar": false,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "cb43d3d09e420e0b",
+        "type": "http in",
+        "z": "0b956ddbde027a1a",
+        "name": "",
+        "url": "/gateway/in",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "8a86d2868994ef8a",
+                "da73f322bb52f943",
+                "93899d3339cba8d7"
+            ]
+        ]
+    },
+    {
+        "id": "8a86d2868994ef8a",
+        "type": "debug",
+        "z": "0b956ddbde027a1a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 430,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "da73f322bb52f943",
+        "type": "http response",
+        "z": "0b956ddbde027a1a",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 420,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "cb73b150bc7bc114",
+        "type": "http in",
+        "z": "0b956ddbde027a1a",
+        "name": "",
+        "url": "/config",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 140,
+        "y": 320,
+        "wires": [
+            [
+                "c95906d4ef830b9c"
+            ]
+        ]
+    },
+    {
+        "id": "474fcb02f23b76a2",
+        "type": "http response",
+        "z": "0b956ddbde027a1a",
+        "name": "",
+        "statusCode": "200",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "x": 670,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d5b1de0e3f9d8def",
+        "type": "template",
+        "z": "0b956ddbde027a1a",
+        "name": "",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload}}",
+        "output": "str",
+        "x": 510,
+        "y": 320,
+        "wires": [
+            [
+                "474fcb02f23b76a2",
+                "35d59cd8772e7d5b"
+            ]
+        ]
+    },
+    {
+        "id": "c95906d4ef830b9c",
+        "type": "function",
+        "z": "0b956ddbde027a1a",
+        "name": "retreive config",
+        "func": "const apparelArray = global.get(\"Apparels\");\n\n\n\nconst found = apparelArray.find(element =>element['Id'] === msg.req.query['value'] );\n\n\nvar retvalue= JSON.stringify(found['def']);\n\n\nmsg.payload = retvalue;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started\nconst apparelArray =[\n       {\n        \"Id\" : \"192.168.1.133\",\n        \"def\" : {\n            \"ApparelID\":\"Ratiere3\",\n            \"PeriodeStatut\":60,\n            \"PeriodeTempTable\":120,\n            \"PeriodeSpeedTable\":120,\n            \"PeriodeLame\":300,\n            \"ThresholdTemp\":25,\n            \"ThresholdSpeed\":300\n            \n            }\n       },\n       {\n        \"Id\" : \"192.168.1.238\",\n        \"def\" : {\n            \"ApparelID\":\"Ratiere5\",\n            \"PeriodeStatut\":60,\n            \"PeriodeTempTable\":120,\n            \"PeriodeSpeedTable\":120,\n            \"PeriodeLame\":300,\n            \"ThresholdTemp\":25,\n            \"ThresholdSpeed\":300\n            }\n       },\n       {\n        \"Id\" : \"192.168.0.141\",\n        \"def\" : {\n            \"ApparelID\":\"Ratiere5\",\n            \"PeriodeStatut\":60,\n            \"PeriodeTempTable\":120,\n            \"PeriodeSpeedTable\":120,\n            \"PeriodeLame\":300,\n            \"ThresholdTemp\":25,\n            \"ThresholdSpeed\":300\n            }\n       },\n       {\n        \"Id\" : \"192.168.1.142\",\n        \"def\" : {\n            \"ApparelID\":\"Ratiere4\",\n            \"PeriodeStatut\":60,\n            \"PeriodeTempTable\":120,\n            \"PeriodeSpeedTable\":120,\n            \"PeriodeLame\":300,\n            \"ThresholdTemp\":25,\n            \"ThresholdSpeed\":300\n            }\n       }\n    ]\n    \ncontext.set('Apparels',apparelArray);    ",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 320,
+        "wires": [
+            [
+                "d5b1de0e3f9d8def"
+            ]
+        ]
+    },
+    {
+        "id": "35d59cd8772e7d5b",
+        "type": "debug",
+        "z": "0b956ddbde027a1a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 670,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "432cd9073a616564",
+        "type": "moduleoutput",
+        "z": "aba512c15a8fecd6",
+        "client": "ad0fb0dd.c701d",
+        "output": "output2",
+        "x": 410,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "ca25023844cbad38",
+        "type": "debug",
+        "z": "aba512c15a8fecd6",
+        "name": "Output to cloud",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 380,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "5e47e88e9c2f3512",
+        "type": "link in",
+        "z": "aba512c15a8fecd6",
+        "name": "FromHTTPServeur",
+        "links": [
+            "93899d3339cba8d7"
+        ],
+        "x": 155,
+        "y": 400,
+        "wires": [
+            [
+                "432cd9073a616564",
+                "ca25023844cbad38"
+            ]
+        ]
+    },
+    {
+        "id": "93899d3339cba8d7",
+        "type": "link out",
+        "z": "0b956ddbde027a1a",
+        "name": "TO Edge Output",
+        "links": [
+            "5e47e88e9c2f3512"
+        ],
+        "x": 395,
+        "y": 40,
+        "wires": []
+    }
+]
